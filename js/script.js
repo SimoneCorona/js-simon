@@ -12,14 +12,14 @@ for (let i = 0; i < 5 ; i++) {
 //Stampa dei 5 num nel HTML
 document.getElementById("numberToRemember").innerHTML = fiveNum;
 
-setTimeout(timerGame, 3000);
+// setTimeout(timerGame, 3000);
+setTimeout(startGame, 3100);
 
+//FUNCTIONS
 function timerGame() {
     //Nascondere i 5 num casuali
-    fiveNum.add("hidden");
+    fiveNum.classList.add("hidden");
 };
-
-setStartGame(timerGame, 3100);
 
 function startGame() {
 //Array dei 5 num scelti dall' utente
@@ -31,13 +31,13 @@ for (let i = 0; i < 5; i++) {
 //Confronto array num random con l' array num scelti dall' utente
 let userPoints = [];
 for (let i = 0; i < 5; i++) {
-    if (fiveNum[i] === userFiveNum[i]) {
+    if (fiveNum.includes(userFiveNum[i])) {
         userPoints.push;
     } 
 }
 //Stampa risultato
-fiveNum.remove("hidden");
+// fiveNum.classList.remove("hidden");
 document.getElementById("userNumberChoice").innerHTML = userFiveNum;
-document.getElementById("score").innerHTML = `Hai azzeccato ${userPoints.length} numeri, quelli uguali erano ${userFiveNum}`;
+document.getElementById("score").innerHTML = `Hai azzeccato ${userPoints.length} numeri, quelli uguali erano ${userPoints}`;
 }; 
 
